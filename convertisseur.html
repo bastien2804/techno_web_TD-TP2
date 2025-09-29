@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Convertisseur de devise</title>
+	
+</head>
+<body>
+
+    <table border>
+        <tr>
+            <th colspan="3" style="background-color: #3b3a3a; color: #f2f2f2;">Convertisseur</th>
+        </tr>
+        <tr>
+            <th><img src="image/euro.png" alt="Euro" width="50" height="50"></th>
+            <td style="text-align: center;">Euros</td>
+            <td><input type="number" id="euros" oninput="convertirDepuisEuros()" /></td>
+        </tr>
+        <tr>
+            <th><img src="image/d_am.png" alt="Dollar Américain" width="50" height="50"></th>
+            <td>Dollar Américain</td>
+            <td><input type="number" id="usd" readonly /></td>
+        </tr>
+        <tr>
+            <th><img src="image/d_au.png" alt="Dollar Australien" width="50" height="50"></th>
+            <td>Dollar Australien</td>
+            <td><input type="number" id="aud" readonly /></td>
+        </tr>
+    </table>
+    
+    <script>
+    function convertirDepuisEuros() {
+        var euros = parseFloat(document.getElementById('euros').value);
+        var tauxUSD = 1.09;
+        var tauxAUD = 1.65;
+        document.getElementById('usd').value = isNaN(euros) ? '' : (euros * tauxUSD).toFixed(2);
+        document.getElementById('aud').value = isNaN(euros) ? '' : (euros * tauxAUD).toFixed(2);
+    }
+    </script>
