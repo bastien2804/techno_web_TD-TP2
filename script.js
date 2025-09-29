@@ -43,4 +43,14 @@ range.addEventListener('input', function() {
 });
 
 //modif case a cocher
-document.querySelector('label').textContent = "Mute";
+document.querySelector('label[for="mute"]').textContent = "Mute";
+
+//fonctionnalité mute
+document.getElementById('mute').addEventListener('change', function() {
+    const rangeInput = document.querySelector('input[type="range"]');
+    if (this.checked) {
+        rangeInput.disabled = true;
+    } else {
+        rangeInput.disabled = false;
+    }
+});

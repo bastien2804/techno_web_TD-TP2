@@ -34,11 +34,14 @@
         <br><br>
         <input type="range" min="0" max="100" value="50">
         <label>Volume</label>
-        <br>
-        0                    <span id="valeur-volume"></span>
-        <br>
-        <label>Une case à cocher</label>
-        <input type="checkbox">
+                <br>
+        <div style="display: inline-block; width: 170px; position: relative;">
+            <span style="position: absolute; left: 0;">0</span>
+            <span id="valeur-volume" style="position: absolute; right: 0;"></span>
+        </div>
+        <br><br>
+        <label for="mute">Une case à cocher</label>
+        <input type="checkbox" id="mute">
         <br><br>
         <label for="date">Date :</label>
         <input type="date" id="date" placeholder="jj / mm / aaaa">
