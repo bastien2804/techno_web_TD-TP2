@@ -13,13 +13,18 @@
 
 <body>
 
-    <h1>Lien et images</h1>
-    <a href="https://fr.wikipedia.org/wiki/Wikipédia:Accueil_principal">La page principale de Wikipedia</a>
-    <br>
-    <img src="image/google.jpeg" class="image-google" alt="Google">
-    <hr>
+    <button class="btn" data-section="section1">▼</button><h1>Lien et images</h1>
+    <div id="section1" class="section-content">
+        <a href="https://fr.wikipedia.org/wiki/Wikipédia:Accueil_principal">La page principale de Wikipedia</a>
+        <br>
+        <img src="image/google.jpeg" class="image-google" alt="Google">
+        <hr>
+    </div>
 
+    <button class="btn" data-section="section2">▼</button>
+    
     <h2>Des éléments !</h2>
+    <div id="section2" class="section-content">
     <form>
         <input type="text" placeholder="Premiers pas avec Javascript">
         <br><br>
@@ -48,15 +53,18 @@
         <br><br>
         <button type="submit">Ok</button>
     </form>
+    </div>
 
     <hr>
+    <button class="btn" data-section="section3">▼</button>
+    <div id="section3" class="section-content">
     <h2>Barres de progression</h2>
     <label>Téléchargement en cours :</label>
     <span class="progress"><span class="progress-bar"></span></span>
     <br><br>
     <label>Espace disponible :</label>
     <span class="progress"><span class="progress-bar-green"></span></span>
-
+    </div>
 
     <script src="script.js"></script>
 </body>

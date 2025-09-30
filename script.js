@@ -54,3 +54,45 @@ document.getElementById('mute').addEventListener('change', function() {
         rangeInput.disabled = false;
     }
 });
+
+//modif du DOM
+const nouvelleImage = document.createElement('img');
+nouvelleImage.src = "https://upload.wikimedia.org/wikipedia/commons/b/bd/UPHF_logo.svg";
+nouvelleImage.width = 200;
+nouvelleImage.alt = "Logo UPHF";
+const premierHr = document.querySelector('hr');
+premierHr.parentNode.insertBefore(nouvelleImage, premierHr);
+
+//cacher tt sauf le menu 
+
+window.addEventListener('DOMContentLoaded', function() {
+    
+    const sections = document.querySelectorAll('.section-content');
+    
+    for (let i = 0; i < sections.length; i++) {
+        if (sections[i].id != 'section2') {
+            sections[i].style.display = 'none';
+        }
+    }
+});
+
+
+const toggleButtons = document.querySelectorAll('.btn');
+
+for (let i = 0; i < toggleButtons.length; i++) {
+    
+    toggleButtons[i].addEventListener('click', function() {
+        
+        const sectionId = this.getAttribute('data-section');
+        
+        const section = document.getElementById(sectionId);
+        
+        if (section.style.display === 'none' || section.style.display === '') {
+            section.style.display = 'block';
+            this.textContent = '▲' + this.textContent.substring(1);
+        } else {
+            section.style.display = 'none';
+            this.textContent = '▼' + this.textContent.substring(1);
+        }
+    });
+}
